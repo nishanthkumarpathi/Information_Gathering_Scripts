@@ -1,0 +1,6 @@
+echo -e 'IP\tOrganization\OrgName\OrgId\OrgTechPhone\OrgTechEmail' >> Customer_DB.txt
+while read line; do
+    echo $line >> Customer_DB.txt
+    whois $line | grep Organization >> Customer_DB.txt
+    echo "--------------------------------------------" >> Customer_DB.txt
+done < ip.txt
